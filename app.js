@@ -11,7 +11,7 @@ app.options('*', cors());
 var whitelist = [
   'https://webbi-pricing-server.onrender.com',
   'https://webbi.co.nz',
-  'https://webbi.co.nz', 
+  'https://www.webbi.co.nz',
   'http://localhost:3000'
 ]
 var corsOptions = {
