@@ -8,7 +8,11 @@ const { resolve } = require("path");
 app.use(express.json());
 app.options('*', cors());
 
-var whitelist = ['https://webbi.co.nz', 'http://localhost:3000']
+var whitelist = [
+  'https://webbi-pricing-server.onrender.com',
+  'https://webbi.co.nz', 
+  'http://localhost:3000'
+]
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -20,6 +24,8 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions));
+
+app.get("/", (req, res) => res.type('html').send('<h2>Hello world</h2>'));
 
 app.post("/generate", async (req, res) => {
   //res.type('html').send(html)
